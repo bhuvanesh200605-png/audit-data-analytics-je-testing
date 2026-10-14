@@ -1,2 +1,23 @@
-# audit-data-analytics-je-testing
-Python audit data analytics tool that tests journal entries for fraud and error risks using Benford’s law, duplicate, segregation-of-duties and threshold-splitting tests, with materiality-based risk scoring and Excel reporting (synthetic data).
+# Audit Data Analytics: Journal Entry Testing
+
+Python tool that tests journal entries for fraud and error indicators.
+Uses synthetic data; not real client data.
+
+## What it does
+Validates data, sets materiality, runs six tests (Benford's law,
+duplicates, round amounts, weekend postings, segregation of duties,
+threshold splitting), risk-scores entries and builds a reproducible sample.
+
+## Key results
+- 35 possible duplicate payments
+- 30 segregation-of-duties breaches
+- 1 threshold-splitting group (12 payments)
+
+## Run it
+pip install -r requirements.txt
+python audit_analytics.py
+
+Step-by-step working: audit_walkthrough.ipynb
+
+## Limitations
+Synthetic data; tests flag items for follow-up and are not proof of fraud.
